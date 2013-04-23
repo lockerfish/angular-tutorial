@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+  <script src="js/angular.min.js"></script>
+  <script src="js/todo.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/todo.css">
+  <link rel="stylesheet" type="text/css" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css">
+</head>
+<body>
+  <h2>Todo</h2>
+  <div ng-controller="TodoController">
+    <span>{{remaining()}} of {{getTotalTodos()}} remaining</span>
+    [ <a href="" ng-click="archive()">archive</a>]
+    <ul class="unstyled">
+      <li ng-repeat="todo in todos">
+        <input type="checkbox" ng-model="todo.done">
+        <span class="done-{{todo.done}}">{{todo.text}}</span>
+      </li>
+    </ul>
+    <form name="form" ng-submit="addTodo()">
+      <input name="todo" type="text" ng-model="todoText" size="30"
+        placeholder="add new todo here" duplicate="duplicate" required>
+      <input class="btn-primary" type="submit" value="add">
+      <!-- the message below shows only when the required error is triggered
+        that is when todo is empty
+      -->
+      <span ng-show="form.todo.$error.required">Required</span>
+      <span ng-show="form.todo.$error.duplicate">Todo item already exist!</span>
+    </form>
+  </div>
+</body>
+</html>
