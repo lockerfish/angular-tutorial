@@ -2,9 +2,9 @@ var app = angular.module('project', ['mongolab']);
 
 app.config(function ($routeProvider) {
 	$routeProvider
-		.when('/', {controller:ListCtrl, templateUrl:'list.html'})
-		.when('/edit/:projectId', {controller:EditCtrl, templateUrl:'detail.html'})
-		.when('/new', {controller:CreateCtrl, templateUrl:'detail.html'})
+		.when('/', {controller:ListCtrl, templateUrl:'partials/list.html'})
+		.when('/edit/:projectId', {controller:EditCtrl, templateUrl:'partials/detail.html'})
+		.when('/new', {controller:CreateCtrl, templateUrl:'partials/detail.html'})
 		.otherwise({redirectTo:'/'});
 });
 
