@@ -1,7 +1,7 @@
 <!doctype html>
 <html ng-app>
 <head>
-  <script src="js/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
 </head>
 <body>
   <div>
@@ -9,6 +9,8 @@
     <input type="text" ng-model="name" placeholder="Enter your name here">
     <hr>
     <h1>Hello {{name}}</span></h1>
+    <!-- best practice is to use ng-bind on index.html NOT views -->
+    <label><span ng-bind="name"></span></label>
   </div>
 </body>
 </html>
