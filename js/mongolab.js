@@ -2,11 +2,11 @@
 var mongo = angular.module('mongolab', ['ngResource']);
 
 mongo.factory('Project', function ($resource) {
+
 	var Project = $resource('https://api.mongolab.com/api/1/databases' +
           '/angularjs/collections/projects/:id',
-          { apiKey: '2tAJ-CIssogfT683gTCqLNEOyDxy3ALA' },  {
-          	update: {method: 'PUT'} 
-          }
+          { apiKey: '2tAJ-CIssogfT683gTCqLNEOyDxy3ALA' },  
+          { update: {method: 'PUT'} }
     );
 
     Project.prototype.update = function(cb) {
