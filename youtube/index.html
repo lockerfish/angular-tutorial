@@ -1,11 +1,14 @@
 <!doctype html>
 <html ng-app="YouTube">
 <head>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-resource.min.js"></script>
+    <script src="js/youtube.js"></script>
   	<link rel="stylesheet" type="text/css" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css">
 </head>
 <body>
+
+  <h1><span class="logo-bachata">bachata</span><span class="logo-rosa">rosa</span></h1>
 
 	<div ng-controller="YouTubeCtrl">
 		<form class="form-horizontal">
@@ -13,10 +16,19 @@
 			<input type="text" ng-model="searchTerm">
 			<button class="btn" ng-click="doSearch()"><i class="icon-search"></i></button>
 		</form>
+            
+            <div id="ytplayer"></div>
+    <!--
+            <table class="table table-stripe">
+                  <tr ng-repeat="video in youtubeResult.feed.entry">
+                        <td><img ng-src="{{video.media$group.media$thumbnail[0].url}}" width="100" height="60">
+                            <a href="{{video.media$group.media$player[0].url}}" target="_blank">{{video.title.$t}}</a>
+                          </td>
+                  </tr>
+            </table>
+      -->
 	</div>
 
-<!--
-<div id="ytplayer"></div>
 
 <script>
   // Load the IFrame Player API code asynchronously.
@@ -27,25 +39,26 @@
 
   // Replace the 'ytplayer' element with an <iframe> and
   // YouTube player after the API code downloads.
-  var player;
-  function onYouTubePlayerAPIReady() {
-    player = new YT.Player('ytplayer', {
-      height: '390',
-      width: '640',
-      // videoId: 'M7lc1UVf-VE',
-      events: {
-      'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange
-  	  }
-    });
-  }
-  function onPlayerReady () {
-  	player.loadPlaylist({list:'PLDU66RN0jeSpHdIcFvAVozv6j1OiEiis5'})
-  }
-  function onPlayerStateChange () {
-  	console.log('onPlayerStateChange');
-  }
+  // var player;
+  // function onYouTubePlayerAPIReady() {
+  //   player = new YT.Player('ytplayer', {
+  //     height: '390',
+  //     width: '640',
+  //     // videoId: 'M7lc1UVf-VE',
+  //     events: {
+  //     'onReady': onPlayerReady,
+  //     'onStateChange': onPlayerStateChange
+  // 	  }
+  //   });
+  // }
+  // function onPlayerReady () {
+  // 	player.loadPlaylist({list:'PLDU66RN0jeSpHdIcFvAVozv6j1OiEiis5'})
+  // }
+  // function onPlayerStateChange () {
+  // 	console.log('onPlayerStateChange');
+  // }
+
 </script>
--->
+
 </body>
 </html>
