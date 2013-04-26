@@ -1,0 +1,51 @@
+<!doctype html>
+<html ng-app="YouTube">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-resource.min.js"></script>
+  	<link rel="stylesheet" type="text/css" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css">
+</head>
+<body>
+
+	<div ng-controller="YouTubeCtrl">
+		<form class="form-horizontal">
+			<label>Search video:</label>
+			<input type="text" ng-model="searchTerm">
+			<button class="btn" ng-click="doSearch()"><i class="icon-search"></i></button>
+		</form>
+	</div>
+
+<!--
+<div id="ytplayer"></div>
+
+<script>
+  // Load the IFrame Player API code asynchronously.
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/player_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // Replace the 'ytplayer' element with an <iframe> and
+  // YouTube player after the API code downloads.
+  var player;
+  function onYouTubePlayerAPIReady() {
+    player = new YT.Player('ytplayer', {
+      height: '390',
+      width: '640',
+      // videoId: 'M7lc1UVf-VE',
+      events: {
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
+  	  }
+    });
+  }
+  function onPlayerReady () {
+  	player.loadPlaylist({list:'PLDU66RN0jeSpHdIcFvAVozv6j1OiEiis5'})
+  }
+  function onPlayerStateChange () {
+  	console.log('onPlayerStateChange');
+  }
+</script>
+-->
+</body>
+</html>
