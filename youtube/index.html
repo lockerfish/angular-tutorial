@@ -4,6 +4,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-resource.min.js"></script>
     <script src="js/youtube.js"></script>
+    <script src="https://www.youtube.com/player_api"></script>
   	<link rel="stylesheet" type="text/css" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css">
 </head>
 <body>
@@ -32,10 +33,10 @@
 
 <script>
   // Load the IFrame Player API code asynchronously.
-  var tag = document.createElement('script');
-  tag.src = "https://www.youtube.com/player_api";
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  // var tag = document.createElement('script');
+  // tag.src = "https://www.youtube.com/player_api";
+  // var firstScriptTag = document.getElementsByTagName('script')[0];
+  // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
   // Replace the 'ytplayer' element with an <iframe> and
   // YouTube player after the API code downloads.
