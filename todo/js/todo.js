@@ -22,6 +22,7 @@ myApp.controller('TodoController', function ($scope, checkArrayService) {
             $scope.todos.push({text:$scope.todoText, done:false});
             $scope.todoText = '';
             $scope.form.todo.$setValidity('duplicate', true);
+            $scope.form.todo.$pristine = true;
         };
     };
 
