@@ -24,8 +24,10 @@
       <!-- the message below shows only when the required error is triggered
         that is when todo is empty
       -->
-      <span ng-show="form.todo.$error.required">Required</span>
-      <span ng-show="form.todo.$error.duplicate">Todo item already exist!</span>
+      <div ng-show="!form.todo.$pristine && form.todo.$invalid">
+        <span ng-show="form.todo.$error.required">Required</span>
+        <span ng-show="form.todo.$error.duplicate">Todo item already exist!</span>
+      </div>
     </form>
   </div>
 </body>
